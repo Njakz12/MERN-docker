@@ -1,4 +1,4 @@
-# Containerizing a MERN Stack Application and Deploying using Docker Containers
+# Containerizing a MERN Stack Application and Deploying using Docker Compose
 
 IN this project we would containerize a MERN Stack app and create a network where the containers can communicate 
 

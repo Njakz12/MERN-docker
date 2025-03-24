@@ -41,7 +41,7 @@ docker build -t mern-frontend .
 ```docker run --name=frontend --network=demo -d -p 5173:5173 mern-frontend```
 
 ### Verify the client is running
-
+Ensure port 5173 is open in the security group settings
 Open your browser and type `http://localhost:5173`
 
 ### Run the mongodb container

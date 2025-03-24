@@ -21,6 +21,8 @@ Database (MongoDB): Stores and retrieves application data.
 
 ### Create a network for the docker containers
 
+Creating a custom network for Docker containers offers several advantages in terms of communication, security, and manageability.
+
 ```docker network create demo```
 
 ### Build the client 

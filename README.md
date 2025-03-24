@@ -72,7 +72,7 @@ Ensure port 5050 is open in the security group settings
 Open your browser and type `http://localhost:5050`
 
 
-## Using Docker Compose
+## Switch to my compose branch to see a better way for running a MERN stack application
 
-```docker compose up -d```
+
 

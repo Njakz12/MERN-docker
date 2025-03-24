@@ -47,4 +47,8 @@ Problem: Managing environment variables, volumes, and ports across multiple dock
 
 Solution: Compose consolidates all configs in one file
 
+## Install Docker compose and run it 
+
+```sudo apt install docker-compose
+   docker-compose up -d```
 

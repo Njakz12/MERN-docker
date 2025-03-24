@@ -49,7 +49,8 @@ Solution: Compose consolidates all configs in one file
 
 ## Install Docker compose and run it 
 
-
+```
+sh
 sudo apt install docker-compose
 docker-compose up -d```
 

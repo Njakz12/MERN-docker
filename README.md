@@ -1,4 +1,23 @@
-# A simple MERN stack application 
+# Containerizing a MERN Stack Application and Deploying using Docker Compose
+
+A MERN stack application is a full-stack JavaScript web application built using four key technologies:
+
+MongoDB – A NoSQL database for storing data in flexible, JSON-like documents.
+
+Express.js – A backend framework for Node.js that simplifies API and server development.
+
+React – A frontend library for building dynamic, interactive user interfaces.
+
+Node.js – A JavaScript runtime that executes server-side code.
+
+How It Works
+Frontend (React): Handles the UI and user interactions.
+
+Backend (Node.js + Express.js): Manages API requests, business logic, and database operations.
+
+Database (MongoDB): Stores and retrieves application data.
+
+
 
 ### Create a network for the docker containers
 

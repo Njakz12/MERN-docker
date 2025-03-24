@@ -1,4 +1,6 @@
-# Containerizing a MERN Stack Application and Deploying using Docker Compose
+# Containerizing a MERN Stack Application and Deploying using Docker Containers
+
+IN this project we would containerize a MERN Stack app and create a network where the containers can communicate 
 
 A MERN stack application is a full-stack JavaScript web application built using four key technologies:
 
@@ -29,35 +31,46 @@ Verify if the network was created
 
 ```docker network ls```
 
-### Build the client 
-
-```sh
-cd mern/frontend
+### Build the frontend 
+Firstly install the latest version of npm. An older version of npm was used for this project. npm (Node Package Manager) is the default package manager for Node.js, used to install, manage, and share JavaScript libraries/tools.
+```sudo apt install npm```
+Afterwards run this below
+```cd mern/frontend
 docker build -t mern-frontend .
 ```
 
-### Run the client
+### Run the frontend
 
 ```docker run --name=frontend --network=demo -d -p 5173:5173 mern-frontend```
 
-### Verify the client is running
+### Verify if the frontend is running
 Ensure port 5173 is open in the security group settings
 Open your browser and type `http://localhost:5173`
 
 ### Run the mongodb container
+Since we would be running Mongodb as a container we have to pull it first before running it 
+```docker pull mongo```
+```docker run --name my-mongodb --network=demo -d -p 27017:27017 -v ~/opt/data:/data/db mongo:latest```
 
-```docker run --network=demo --name mongodb -d -p 27017:27017 -v ~/opt/data:/data/db mongodb:latest```
+### Verify if the db is running
+Ensure port 27017 is open in the security group settings
+Open your browser and type `http://localhost:27017`
 
-### Build the server
+### Build the backend
 
-```sh
+```
 cd mern/backend
 docker build -t mern-backend .
 ```
 
-### Run the server
+### Run the backend server
 
 ```docker run --name=backend --network=demo -d -p 5050:5050 mern-backend```
+
+### Verify if the server is running
+Ensure port 5050 is open in the security group settings
+Open your browser and type `http://localhost:5050`
+
 
 ## Using Docker Compose
 

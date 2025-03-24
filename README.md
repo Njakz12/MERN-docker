@@ -1,6 +1,8 @@
 # Containerizing a MERN Stack Application and Deploying using Docker Compose
 
-IN this project we would containerize a MERN Stack app and create a network where the containers can communicate 
+IN this project we would containerize a MERN Stack app and create a network where the containers can communicate and deploy it using docker compose.
+
+In my main branch i deployed the MERN stack application using docker containers. 
 
 A MERN stack application is a full-stack JavaScript web application built using four key technologies:
 
@@ -21,15 +23,24 @@ Database (MongoDB): Stores and retrieves application data.
 
 
 
-### Create a network for the docker containers
+### Why Use Docker Compose Over Individual Containers for MERN Stack?
+## 1. Simplified Multi-Container Management
+Running separate docker run commands for each service (Frontend, Backend, DB) is tedious and error-prone. Docker Compose defines all services in a single docker-compose.yml file.
 
-Creating a custom network for Docker containers offers several advantages in terms of communication, security, and manageability.
+## 2. Automated Networking
+Manually creating networks and linking containers is complex. Compose auto-creates a network for all services, enabling seamless communication by service name (e.g., backend can connect to mongodb via mongodb:27017).
 
-```docker network create demo```
+## 3. Dependency Management
+Problem: Starting containers in the correct order (e.g., MongoDB before backend) requires manual scripting.
+Solution: Compose handles dependencies with depends_on
 
-Verify if the network was created 
+## 4. Single-Command Workflow
+Start all services	```docker-compose up -d```	 Multiple docker run commands
+Stop all services	```docker-compose down``` 	Manually stop/rm each container
+View logs	```docker-compose logs -f```	Check logs per container
+Rebuild images	```docker-compose up --build```	Rebuild/restart each container
+ 
 
-```docker network ls```
 
 ### Build the frontend 
 Firstly install the latest version of npm. An older version of npm was used for this project. npm (Node Package Manager) is the default package manager for Node.js, used to install, manage, and share JavaScript libraries/tools.

@@ -25,6 +25,10 @@ Creating a custom network for Docker containers offers several advantages in ter
 
 ```docker network create demo```
 
+Verify if the network was created 
+
+```docker network ls```
+
 ### Build the client 
 
 ```sh
